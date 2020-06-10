@@ -7,13 +7,13 @@ namespace LEON0128
 {
 
 // ptrdiff_t
-using ptrdiff_t = ::ptrdiff_t;
+using ::ptrdiff_t;
 
 // size_t
-using size_t = ::size_t;
+using ::size_t;
 
 // max_align_t
-using max_align_t = ::max_align_t;
+using ::max_align_t;
 
 // nullptr_t
 using nullptr_t = decltype(nullptr);
