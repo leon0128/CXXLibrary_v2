@@ -72,7 +72,44 @@ template<class T>
 class numeric_limits<const volatile T>;
 
 template<>
-class numeric_limits<bool>;
+class numeric_limits<bool>
+{
+public:
+    static constexpr bool is_specialized = true;
+    static constexpr bool min() noexcept {return false;}
+    static constexpr bool max() noexcept {return true;}
+    static constexpr bool lowest() noexcept {return false;}
+
+    static constexpr int digits = 1;
+    static constexpr int digits10 = 0;
+    static constexpr int max_digits10 = 0;
+
+    static constexpr bool is_signed = false;
+    static constexpr bool is_integer = true;
+    static constexpr bool is_exact = true;
+    static constexpr int radix = 2;
+    static constexpr bool epsilon() noexcept {return 0;}
+    static constexpr bool round_error() noexcept {return 0;}
+
+    static constexpr int min_exponent = 0;
+    static constexpr int min_exponent10 = 0;
+    static constexpr int max_exponent = 0;
+    static constexpr int max_exponent10 = 0;
+
+    static constexpr bool has_infinity = false;
+    static constexpr bool has_quiet_NaN = false;
+    static constexpr bool has_signaling_NaN = false;
+    static constexpr float_denorm_style has_denorm = denorm_absent;
+    static constexpr bool has_denorm_loss = false;
+    static constexpr bool infinity() noexcept {return 0;}
+    static constexpr bool quiet_NaN() noexcept {return 0;}
+    static constexpr bool signaling_NaN() noexcept {return 0;}
+    static constexpr bool denorm_min() noexcept {return 0;}
+
+    static constexpr bool is_iec559 = false;
+    static constexpr bool tinyness_before = false;
+    static constexpr float_round_style round_style = round_toward_zero;
+};
 
 template<>
 class numeric_limits<char>;
