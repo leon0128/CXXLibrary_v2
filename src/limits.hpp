@@ -1,6 +1,9 @@
 #ifndef LIMITS_HPP
 #define LIMITS_HPP
 
+#include "climits.hpp"
+#include "cfloat.hpp"
+
 namespace LEON0128
 {
 
@@ -112,41 +115,128 @@ public:
 };
 
 template<>
-class numeric_limits<char>;
-template<>
-class numeric_limits<signed char>;
-template<>
-class numeric_limits<unsigned char>;
-template<>
-class numeric_limits<char16_t>;
-template<>
-class numeric_limits<char32_t>;
-template<>
-class numeric_limits<wchar_t>;
+class numeric_limits<char>
+{
+public:
+    static constexpr bool is_specialized = true;
+    static constexpr char min() noexcept {return CHAR_MIN;}
+    static constexpr char max() noexcept {return CHAR_MAX;}
+    static constexpr char lowest() noexcept {return min();}
+};
 
 template<>
-class numeric_limits<short>;
-template<>
-class numeric_limits<int>;
-template<>
-class numeric_limits<long>;
-template<>
-class numeric_limits<long long>;
-template<>
-class numeric_limits<unsigned short>;
-template<>
-class numeric_limits<unsigned int>;
-template<>
-class numeric_limits<unsigned long>;
-template<>
-class numeric_limits<unsigned long long>;
+class numeric_limits<signed char>
+{
+public:
+    static constexpr bool is_specialized = true;
+    static constexpr signed char min() noexcept {return SCHAR_MIN;}
+};
 
 template<>
-class numeric_limits<float>;
+class numeric_limits<unsigned char>
+{
+public:
+    static constexpr bool is_specialized = true;
+    static constexpr unsigned char min() noexcept {return 0;}
+};
+
 template<>
-class numeric_limits<double>;
+class numeric_limits<char16_t>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
 template<>
-class numeric_limits<long double>;
+class numeric_limits<char32_t>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<wchar_t>
+{
+public:
+    static constexpr bool is_specialized = ture;
+};
+
+template<>
+class numeric_limits<short>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<int>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<long>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<long long>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<unsigned short>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<unsigned int>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<unsigned long>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<unsigned long long>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<float>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
+
+template<>
+class numeric_limits<double>
+{
+public:
+    static constexpr bool is_specialized = true;
+}
+
+template<>
+class numeric_limits<long double>
+{
+public:
+    static constexpr bool is_specialized = true;
+};
 
 }
 
